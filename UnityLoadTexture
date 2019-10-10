@@ -1,0 +1,12 @@
+    Texture2D LoadTexture(string filePath)
+    {
+        byte[] imageBytes = BetterStreamingAssets.ReadAllBytes(filePath); //reading bytes from imgs
+
+        Texture2D imageTexture = new Texture2D(2, 2); //dummy texture
+        //attempting to load texture from bytes, overwriting the dummy texture
+        if (imageTexture.LoadImage(imageBytes))
+        {
+            return imageTexture;
+        }
+        return null;
+    }
